@@ -166,6 +166,13 @@ export const Video = (props: VideoProps) => {
                     <h1 className="title">{queue[currentIndex].metadata.song.name}</h1>
                     <Helmet defer={false}>
                       <title>{queue[currentIndex].metadata.song.name} - LTTKGP 🎶 🎶 🎶</title>
+                      {/* Facebook Meta Tags */}
+                      <meta property="og:title" content={queue[currentIndex].metadata.song.name}></meta>
+                      <meta property="og:image" content={`https://i.ytimg.com/vi/${queue[currentIndex].id}/maxresdefault.jpg`}></meta>
+                    
+                      {/* Twitter Meta Tags */}
+                      <meta property="twitter:title" content={queue[currentIndex].metadata.song.name}></meta>
+                      <meta property="twitter:image" content={`https://i.ytimg.com/vi/${queue[currentIndex].id}/maxresdefault.jpg`}></meta>
                     </Helmet>
                     <h2>{joinArtists(queue[currentIndex].metadata.artists)}</h2>
                   </div>
